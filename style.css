@@ -1,0 +1,145 @@
+body {
+  background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+  font-family: 'Inter', 'Roboto', sans-serif;
+  color: #1e293b;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 12px;
+}
+
+.section {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(40, 60, 140, 0.08);
+  padding: 32px 24px;
+  margin-bottom: 32px;
+}
+
+.title-row, .section-title-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.main-title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: #312e81;
+}
+
+.subtitle {
+  color: #475569;
+  font-size: 1.15rem;
+  margin-bottom: 24px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.feature {
+  border-radius: 12px;
+  padding: 20px 16px;
+}
+
+.feature.blue {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+.feature.green {
+  background: #ecfdf5;
+  color: #047857;
+}
+.feature.purple {
+  background: #f5f3ff;
+  color: #7c3aed;
+}
+.feature-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.feature h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.feature ul {
+  margin: 0;
+  padding: 0;
+  list-style: disc inside;
+  font-size: 0.97em;
+}
+.feature li {
+  margin-bottom: 5px;
+}
+
+.section-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #312e81;
+}
+
+.tree-container {
+  background: #f1f5f9;
+  border-radius: 8px;
+  padding: 18px 14px;
+  border: 1px solid #e5e7eb;
+  font-size: 0.98em;
+  font-family: 'Inter', 'Roboto', sans-serif;
+  overflow-x: auto;
+}
+.tree {
+  list-style: none;
+  padding-left: 0;
+}
+.tree li {
+  margin-left: 24px;
+  margin-bottom: 4px;
+  font-size: 1em;
+  position: relative;
+  padding-left: 24px;
+}
+.tree .icon {
+  display: inline-block;
+  margin-right: 7px;
+  vertical-align: middle;
+}
+.tree .desc {
+  color: #64748b;
+  font-size: 0.95em;
+  margin-left: 6px;
+}
+.tree .file {
+  color: #4b5563;
+}
+.tree .folder {
+  color: #4338ca;
+}
+
+.quickstart .code-block {
+  background: #18181b;
+  color: #e5e7eb;
+  font-family: 'Fira Mono', 'Menlo', 'Monaco', monospace;
+  font-size: 0.96em;
+  padding: 18px 14px;
+  border-radius: 8px;
+  overflow-x: auto;
+  border: 1px solid #1e293b;
+}
+.section.quickstart h2.section-title {
+  margin-bottom: 16px;
+}
