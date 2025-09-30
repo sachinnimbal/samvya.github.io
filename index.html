@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Samvya-CRUD Library</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <section class="section intro">
+      <div class="title-row">
+        <span class="icon package"></span>
+        <h1 class="main-title">Samvya-CRUD Library</h1>
+      </div>
+      <p class="subtitle">
+        Production-ready Spring Boot library that eliminates CRUD boilerplate for JPA (MySQL, PostgreSQL) and MongoDB
+      </p>
+      <div class="features-grid">
+        <div class="feature blue">
+          <div class="feature-title">
+            <span class="icon settings"></span>
+            <h3>Core Features</h3>
+          </div>
+          <ul>
+            <li>Annotation-driven configuration</li>
+            <li>Compile-time validation</li>
+            <li>Auto-generated CRUD endpoints</li>
+            <li>Built-in caching (LRU)</li>
+          </ul>
+        </div>
+        <div class="feature green">
+          <div class="feature-title">
+            <span class="icon code"></span>
+            <h3>Database Support</h3>
+          </div>
+          <ul>
+            <li>MySQL with dialect adapter</li>
+            <li>PostgreSQL with dialect adapter</li>
+            <li>MongoDB with aggregation</li>
+            <li>Multi-database support</li>
+          </ul>
+        </div>
+        <div class="feature purple">
+          <div class="feature-title">
+            <span class="icon book"></span>
+            <h3>Developer Experience</h3>
+          </div>
+          <ul>
+            <li>Zero boilerplate code</li>
+            <li>Automatic audit fields</li>
+            <li>Unique constraint handling</li>
+            <li>Comprehensive docs</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section structure">
+      <div class="section-title-row">
+        <span class="icon folder-large"></span>
+        <h2 class="section-title">Project Structure</h2>
+      </div>
+      <div class="tree-container">
+        <ul class="tree">
+          <li><span class="icon folder"></span> samvya-crud
+            <ul>
+              <li><span class="icon folder"></span> core <span class="desc">- Annotations, audit, API response, compile-time processor</span>
+                <ul>
+                  <li><span class="icon folder"></span> src/main/java/com/samvya/crud/core
+                    <ul>
+                      <li><span class="icon folder"></span> annotations
+                        <ul>
+                          <li><span class="icon code"></span> SamvyaCrud.java</li>
+                          <li><span class="icon code"></span> SamvyaUniqueConstraint.java</li>
+                          <li><span class="icon code"></span> SamvyaUniqueConstraints.java</li>
+                          <li><span class="icon code"></span> SamvyaEntityType.java</li>
+                        </ul>
+                      </li>
+                      <li><span class="icon folder"></span> model
+                        <ul>
+                          <li><span class="icon code"></span> SamvyaAudit.java</li>
+                          <li><span class="icon code"></span> SamvyaJpaEntity.java</li>
+                          <li><span class="icon code"></span> SamvyaMongoEntity.java</li>
+                          <li><span class="icon code"></span> DBType.java</li>
+                        </ul>
+                      </li>
+                      <li><span class="icon folder"></span> response
+                        <ul>
+                          <li><span class="icon code"></span> ApiResponse.java</li>
+                          <li><span class="icon code"></span> ErrorResponse.java</li>
+                        </ul>
+                      </li>
+                      <li><span class="icon folder"></span> processor
+                        <ul>
+                          <li><span class="icon code"></span> SamvyaAnnotationProcessor.java</li>
+                          <li><span class="icon code"></span> EntityValidator.java</li>
+                        </ul>
+                      </li>
+                      <li><span class="icon folder"></span> config
+                        <ul>
+                          <li><span class="icon code"></span> SamvyaProperties.java</li>
+                          <li><span class="icon code"></span> DatabaseConfig.java</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><span class="icon folder"></span> src/main/resources/META-INF/services
+                    <ul>
+                      <li><span class="icon code"></span> javax.annotation.processing.Processor</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              
+              <li><span class="icon folder"></span> jpa-adapter <span class="desc">- JPA/Hibernate support with dialect handling</span>
+                <ul>
+                  <li><span class="icon folder"></span> src/main/java/com/samvya/crud/jpa
+                    <ul>
+                      <li><span class="icon folder"></span> template
+                        <ul>
+                          <li><span class="icon code"></span> SamvyaJpaTemplate.java</li>
+                          <li><span class="icon code"></span> JpaOperations.java</li>
+                        </ul>
+                      </li>
+                      <li><span class="icon folder"></span> dialect
+                        <ul>
+                          <li><span class="icon code"></span> DialectAdapter.java</li>
+                          <li><span class="icon code"></span> MySQLDialectAdapter.java</li>
+                          <li><span class="icon code"></span> PostgreSQLDialectAdapter.java</li>
+                          <li><span class="icon code"></span> DialectResolver.java</li>
+                        </ul>
+                      </li>
+                      <li><span class="icon folder"></span> repository
+                        <ul>
+                          <li><span class="icon code"></span> SamvyaJpaRepository.java</li>
+                          <li><span class="icon code"></span> DynamicJpaRepository.java</li>
+                        </ul>
+                      </li>
+                      <li><span class="icon folder"></span> service
+                        <ul>
+                          <li><span class="icon code"></span> JpaCrudService.java</li>
+                          <li><span class="icon code"></span> UniqueConstraintService.java</li>
+                        </ul>
+                      </li>
+                      <li><span class="icon folder"></span> config
+                        <ul>
+                          <li><span class="icon code"></span> JpaAutoConfiguration.java</li>
+                          <li><span class="icon code"></span> JpaDataSourceConfiguration.java</li>
+                          <li><span class="icon code"></span> HibernateConfiguration.java</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              
+              <li><span class="icon folder"></span> mongo-adapter <span class="desc">- MongoDB support with aggregation and bulk ops</span>
+                <ul>
+                  <li><span class="icon folder"></span> src/main/java/com/samvya/crud/mongo
+                    <ul>
+                      <li><span class="icon folder"></span> template
+                        <ul>
+                          <li><span class="icon code"></span> SamvyaMongoTemplate.java</li>
+                          <li><span class="icon code"></span> MongoOperations.java</li>
+                        </ul>
+                      </li>
+                      <li><span class="icon folder"></span> repository
+                        <ul>
+                          <li><span class="icon code"></span> SamvyaMongoRepository.java</li>
+                          <li><span class="icon code"></span> DynamicMongoRepository.java</li>
+                        </ul>
+                      </li>
+                      <li><span class="icon folder"></span> service
+                        <ul>
+                          <li><span class="icon code"></span> MongoCrudService.java</li>
+                          <li><span class="icon code"></span> MongoUniqueConstraintService.java</li>
+                        </ul>
+                      </li>
+                      <li><span class="icon folder"></span> config
+                        <ul>
+                          <li><span class="icon code"></span> MongoAutoConfiguration.java</li>
+                          <li><span class="icon code"></span> MongoIndexConfiguration.java</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              
+              <li><span class="icon folder"></span> web <span class="desc">- REST controllers and exception handling</span>
+                <ul>
+                  <li><span class="icon folder"></span> src/main/java/com/samvya/crud/web
+                    <ul>
+                      <li><span class="icon folder"></span> controller
+                        <ul>
+                          <li><span class="icon code"></span> SamvyaCrudController.java</li>
+                          <li><span class="icon code"></span> CrudEndpointGenerator.java</li>
+                        </ul>
+                      </li>
+                      <li><span class="icon folder"></span> exception
+                        <ul>
+                          <li><span class="icon code"></span> GlobalExceptionHandler.java</li>
+                          <li><span class="icon code"></span> DuplicateEntityException.java</li>
+                          <li><span class="icon code"></span> EntityNotFoundException.java</li>
+                        </ul>
+                      </li>
+                      <li><span class="icon folder"></span> request
+                        <ul>
+                          <li><span class="icon code"></span> PageRequest.java</li>
+                          <li><span class="icon code"></span> SearchRequest.java</li>
+                          <li><span class="icon code"></span> BulkRequest.java</li>
+                        </ul>
+                      </li>
+                      <li><span class="icon folder"></span> config
+                        <ul>
+                          <li><span class="icon code"></span> WebAutoConfiguration.java</li>
+                          <li><span class="icon code"></span> CorsConfiguration.java</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              
+              <li><span class="icon folder"></span> cache <span class="desc">- Lightweight in-memory caching</span>
+                <ul>
+                  <li><span class="icon folder"></span> src/main/java/com/samvya/crud/cache
+                    <ul>
+                      <li><span class="icon code"></span> SamvyaCache.java</li>
+                      <li><span class="icon code"></span> CacheManager.java</li>
+                      <li><span class="icon code"></span> LRUEvictionPolicy.java</li>
+                      <li><span class="icon code"></span> CacheConfig.java</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              
+              <li><span class="icon folder"></span> examples <span class="desc">- Sample Spring Boot applications</span>
+                <ul>
+                  <li><span class="icon folder"></span> user-management-jpa
+                    <ul>
+                      <li><span class="icon code"></span> UserApplication.java</li>
+                      <li><span class="icon code"></span> User.java</li>
+                      <li><span class="icon code"></span> UserController.java</li>
+                      <li><span class="icon code"></span> application.yml</li>
+                    </ul>
+                  </li>
+                  <li><span class="icon folder"></span> product-catalog-mongo
+                    <ul>
+                      <li><span class="icon code"></span> ProductApplication.java</li>
+                      <li><span class="icon code"></span> Product.java</li>
+                      <li><span class="icon code"></span> ProductController.java</li>
+                      <li><span class="icon code"></span> application.yml</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li><span class="icon file"></span> pom.xml</li>
+              <li><span class="icon file"></span> README.md</li>
+              <li><span class="icon file"></span> PERFORMANCE.md</li>
+              <li><span class="icon file"></span> MIGRATION.md</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section quickstart">
+      <h2 class="section-title">Quick Start Example</h2>
+      <pre class="code-block">
+// 1. Add dependency to pom.xml
+&lt;dependency&gt;
+    &lt;groupId&gt;com.samvya&lt;/groupId&gt;
+    &lt;artifactId&gt;samvya-crud-starter&lt;/artifactId&gt;
+    &lt;version&gt;1.0.0&lt;/version&gt;
+&lt;/dependency&gt;
+
+// 2. Annotate your Spring Boot application
+@SpringBootApplication
+@SamvyaCrud
+public class MyApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(MyApplication.class, args);
+    }
+}
+
+// 3. Create your model
+@Data
+@SamvyaUniqueConstraint(fields = {"email"})
+public class User extends SamvyaJpaEntity&lt;Long&gt; {
+    private String name;
+    private String email;
+}
+
+// 4. Create your controller (that's it!)
+@RestController
+@RequestMapping("/api/users")
+public class UserController extends SamvyaCrudController&lt;User, Long&gt; {
+    // All CRUD endpoints auto-generated!
+}
+      </pre>
+    </section>
+  </div>
+</body>
+</html>
